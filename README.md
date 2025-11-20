@@ -1,8 +1,10 @@
 <div align="center">
 
-<img src="1" width="49%" /> <img src="2" width="49%" />
+<img src="1.png" width="49%" alt="效果图1" />
+<img src="2.png" width="49%" alt="效果图2" />
 <br>
-<img src="3" width="49%" /> <img src="4" width="49%" />
+<img src="3.png" width="49%" alt="效果图3" />
+<img src="4.png" width="49%" alt="效果图4" />
 
 </div>
 
