@@ -1,11 +1,48 @@
-<div align="center">
+# RoyalCrown 2025 - 无货源电商系统
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+## 项目简介
+这是一个基于 React + Tailwind 打造的高端新娘头饰电商平台，专为无货源（Dropshipping）模式设计。系统包含前台展示、购物车、离线支付（银行卡/微信/支付宝）以及一个强大的商家后台。
 
-  <h1>Built with AI Studio</h2>
+## 核心功能
+1. **自动利润计算**：后台自动显示（用户付款 - 1688成本）的净利润。
+2. **离线支付**：不接入 Stripe/PayPal，直接展示个人收款码，避税且无手续费。
+3. **一键代发**：后台提供“一键复制收货信息”功能，方便直接去 1688 填地址下单。
+4. **短信通知**：模拟发货后自动发送短信给客户。
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## 💰 0垫资运营教程 (必读)
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+### 第一步：选品 (1688)
+1. 打开 1688 APP，搜索“新娘皇冠”、“森系发箍”。
+2. 筛选“一件代发”、“48小时发货”、“回头率 > 20%”。
+3. 选取 50-100 个精美款，成本控制在 20-50 元之间。
+4. 售价定为成本的 3-5 倍（例如进价 30，卖 128）。高端图片是溢价的关键。
 
-</div>
+### 第二步：图片处理
+1. 下载 1688 详情页的高清图。
+2. 使用 PS 或美图秀秀去除原有水印。
+3. 统一调色，增加“高级感”（降低饱和度，增加锐度）。
+
+### 第三步：配置系统
+1. 在 `services/mockData.ts` 中修改 `PAYMENT_ACCOUNTS`，换成你自己的收款卡号和二维码图片链接。
+2. 部署上线（见下文）。
+
+### 第四步：接单流程
+1. 用户在网站下单，看到你的银行卡号转账。
+2. 你收到钱后，在后台 (`/admin`) 看到红色“待付款”订单。
+3. 确认到账后，点击“复制地址”。
+4. 去 1688 对应店铺下单，填入用户地址。
+5. 1688 发货后，将单号填入后台，并点击“已发货”。
+6. 系统（模拟）发送短信给用户。
+
+## 技术栈
+- React 18
+- TypeScript
+- Tailwind CSS
+- Recharts (数据可视化)
+- Lucide React (图标)
+
+## 部署 (Vercel / GitHub Pages)
+本项目为纯静态 SPA，无需后端数据库。
+1. `npm install`
+2. `npm run build`
+3. 将 `dist` 文件夹内容拖入 Vercel 或 Netlify 即可上线。
